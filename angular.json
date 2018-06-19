@@ -1,34 +1,29 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "",
+  "newProjectRoot": "projects",
   "projects": {
     "micro-frontends-architecture": {
-      "root": "apps/micro-frontends-architecture",
-      "sourceRoot": "apps/micro-frontends-architecture/src",
+      "root": "",
+      "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {
-        "@schematics/angular:component": {
-          "inlineStyle": true,
-          "styleext": "scss"
-        }
-      },
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/micro-frontends-architecture",
-            "index": "apps/micro-frontends-architecture/src/index.html",
-            "main": "apps/micro-frontends-architecture/src/main.ts",
-            "polyfills": "apps/micro-frontends-architecture/src/polyfills.ts",
-            "tsConfig": "apps/micro-frontends-architecture/tsconfig.app.json",
+            "outputPath": "dist/micro-frontends-architecture",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "apps/micro-frontends-architecture/src/favicon.ico",
-              "apps/micro-frontends-architecture/src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "apps/micro-frontends-architecture/src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -36,8 +31,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/micro-frontends-architecture/src/environments/environment.ts",
-                  "with": "apps/micro-frontends-architecture/src/environments/environment.prod.ts"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -72,17 +67,17 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "apps/micro-frontends-architecture/src/test.ts",
-            "polyfills": "apps/micro-frontends-architecture/src/polyfills.ts",
-            "tsConfig": "apps/micro-frontends-architecture/tsconfig.spec.json",
-            "karmaConfig": "apps/micro-frontends-architecture/karma.conf.js",
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "apps/micro-frontends-architecture/src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": [],
             "assets": [
-              "apps/micro-frontends-architecture/src/favicon.ico",
-              "apps/micro-frontends-architecture/src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ]
           }
         },
@@ -90,8 +85,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/micro-frontends-architecture/tsconfig.app.json",
-              "apps/micro-frontends-architecture/tsconfig.spec.json"
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -101,13 +96,13 @@
       }
     },
     "micro-frontends-architecture-e2e": {
-      "root": "apps/micro-frontends-architecture-e2e",
+      "root": "e2e/",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "apps/micro-frontends-architecture-e2e/protractor.conf.js",
+            "protractorConfig": "e2e/protractor.conf.js",
             "devServerTarget": "micro-frontends-architecture:serve"
           },
           "configurations": {
@@ -119,245 +114,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "apps/micro-frontends-architecture-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "app1": {
-      "root": "apps/app1/",
-      "sourceRoot": "apps/app1/src",
-      "projectType": "application",
-      "prefix": "micro-frontends-architecture",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/app1",
-            "index": "apps/app1/src/index.html",
-            "main": "apps/app1/src/main.ts",
-            "polyfills": "apps/app1/src/polyfills.ts",
-            "tsConfig": "apps/app1/tsconfig.app.json",
-            "assets": [
-              "apps/app1/src/favicon.ico",
-              "apps/app1/src/assets"
-            ],
-            "styles": [
-              "apps/app1/src/styles.css"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/app1/src/environments/environment.ts",
-                  "with": "apps/app1/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "app1:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "app1:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "app1:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "apps/app1/src/test.ts",
-            "polyfills": "apps/app1/src/polyfills.ts",
-            "tsConfig": "apps/app1/tsconfig.spec.json",
-            "karmaConfig": "apps/app1/karma.conf.js",
-            "styles": [
-              "apps/app1/src/styles.css"
-            ],
-            "scripts": [],
-            "assets": [
-              "apps/app1/src/favicon.ico",
-              "apps/app1/src/assets"
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/app1/tsconfig.app.json",
-              "apps/app1/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "app1-e2e": {
-      "root": "apps/app1-e2e/",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "apps/app1-e2e/protractor.conf.js",
-            "devServerTarget": "app1:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "app1:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "apps/app1-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "app2": {
-      "root": "apps/app2/",
-      "sourceRoot": "apps/app2/src",
-      "projectType": "application",
-      "prefix": "micro-frontends-architecture",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/app2",
-            "index": "apps/app2/src/index.html",
-            "main": "apps/app2/src/main.ts",
-            "polyfills": "apps/app2/src/polyfills.ts",
-            "tsConfig": "apps/app2/tsconfig.app.json",
-            "assets": [
-              "apps/app2/src/favicon.ico",
-              "apps/app2/src/assets"
-            ],
-            "styles": [
-              "apps/app2/src/styles.css"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/app2/src/environments/environment.ts",
-                  "with": "apps/app2/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "app2:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "app2:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "app2:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "apps/app2/src/test.ts",
-            "polyfills": "apps/app2/src/polyfills.ts",
-            "tsConfig": "apps/app2/tsconfig.spec.json",
-            "karmaConfig": "apps/app2/karma.conf.js",
-            "styles": [
-              "apps/app2/src/styles.css"
-            ],
-            "scripts": [],
-            "assets": [
-              "apps/app2/src/favicon.ico",
-              "apps/app2/src/assets"
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/app2/tsconfig.app.json",
-              "apps/app2/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "app2-e2e": {
-      "root": "apps/app2-e2e/",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "apps/app2-e2e/protractor.conf.js",
-            "devServerTarget": "app2:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "app2:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "apps/app2-e2e/tsconfig.e2e.json",
+            "tsConfig": "e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -366,8 +123,5 @@
       }
     }
   },
-  "defaultProject": "micro-frontends-architecture",
-  "cli": {
-    "defaultCollection": "@nrwl/schematics"
-  }
+  "defaultProject": "micro-frontends-architecture"
 }
