@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --base-href shell",
+    "start:app1": "ng serve --base-href app1 --project app1 --port 4201",
+    "start:app2": "ng serve --base-href app2 --project app2 --port 4202",
     "build": "ng build",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
