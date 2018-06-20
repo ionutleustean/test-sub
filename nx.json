@@ -25,6 +25,30 @@
     },
     "app2-e2e": {
       "tags": []
+    },
+    "app3": {
+      "tags": []
+    },
+    "app3-e2e": {
+      "tags": []
+    },
+    "app4": {
+      "tags": []
+    },
+    "app4-e2e": {
+      "tags": []
+    },
+    "app5": {
+      "tags": []
+    },
+    "app5-e2e": {
+      "tags": []
+    },
+    "app6": {
+      "tags": []
+    },
+    "app6-e2e": {
+      "tags": []
     }
   }
 }

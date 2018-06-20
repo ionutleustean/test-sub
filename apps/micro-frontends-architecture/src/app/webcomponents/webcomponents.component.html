@@ -1,3 +1,24 @@
-<p>
-  webcomponents works!
-</p>
+<div [ngStyle]="{display: 'flex', height: 'calc(100vh - 50px)' } ">
+
+  <div [ngStyle]="{width: '300px', margin: '15px', background: '#eee', padding: '15px'}">
+
+    <h4 [ngStyle]="{margin: '0'}"> menu </h4>
+
+    <div><a (click)="load()"> client</a></div>
+    <div><a (click)="setComponent(5)"> app 5 </a></div>
+    <div><a  (click)="setComponent(6)"> app 6 </a></div>
+
+  </div>
+  <div class="aaaaaaaaaaaa" [ngStyle]="{width: '100%', padding: '15px'}">
+
+
+    <app-5 [ngStyle]="displayComponent(5)"  ></app-5>
+    <app-6 [ngStyle]="displayComponent(6)"  ></app-6>
+
+    <router-outlet></router-outlet>
+
+  </div>
+
+
+</div>
+

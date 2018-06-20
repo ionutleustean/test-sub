@@ -1,3 +1,20 @@
-<p>
-  iframe works!
-</p>
+<div [ngStyle]="{display: 'flex', height: 'calc(100vh - 50px)' } ">
+
+  <div [ngStyle]="{width: '300px', margin: '15px', background: '#eee', padding: '15px'}">
+
+    <h4 [ngStyle]="{margin: '0'}"> menu </h4>
+
+    <div><a (click)="setIframe(3)"> app 3 </a></div>
+    <div><a (click)="setIframe(4)"> app 4 </a></div>
+
+  </div>
+  <div [ngStyle]="{width: '100%', padding: '15px'}">
+
+    <iframe [ngStyle]="displayIframe(3)" src="http://localhost:4203"></iframe>
+    <iframe [ngStyle]="displayIframe(4)" src="http://localhost:4204"></iframe>
+
+  </div>
+
+
+</div>
+
