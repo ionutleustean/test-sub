@@ -25,6 +25,7 @@ const routes: Routes = [
         path: 'c4',
         component: C4Component,
 
+
       }
     ]
   }
