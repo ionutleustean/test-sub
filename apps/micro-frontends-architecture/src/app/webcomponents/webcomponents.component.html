@@ -6,16 +6,17 @@
 
     <div><a (click)="load()"> client</a></div>
     <div><a (click)="setComponent(5)"> app 5 </a></div>
-    <div><a  (click)="setComponent(6)"> app 6 </a></div>
+    <div><a (click)="setComponent(6)"> app 6 </a></div>
 
   </div>
   <div class="aaaaaaaaaaaa" [ngStyle]="{width: '100%', padding: '15px'}">
 
+      <!--<app-5 [ngStyle]="displayComponent(5)"></app-5>-->
 
-    <app-5 [ngStyle]="displayComponent(5)"  ></app-5>
-    <app-6 [ngStyle]="displayComponent(6)"  ></app-6>
 
-    <router-outlet></router-outlet>
+      <!--<app-6 [ngStyle]="displayComponent(6)"></app-6>-->
+
+    <router-outlet name="web"></router-outlet>
 
   </div>
 

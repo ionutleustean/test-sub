@@ -11,6 +11,12 @@ import {MicroAppLoaderService} from "./webcomponents/micro-app-loader.service";
 import {App5Module} from "../../../app5/src/app/app.module";
 import {App6Module} from "../../../app6/src/app/app.module";
 
+
+import { environment } from '../environments/environment';
+
+console.log(environment)
+
+
 @NgModule({
   declarations: [
     AppComponent,

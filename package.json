@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --project micro-frontends-architecture",
+    "start": "ng serve --project micro-frontends-architecture ",
     "start:app1": "ng serve --project app1 --port 4201",
     "start:app2": "ng serve --project app2 --port 4202",
     "start:app3": "ng serve --project app3 --port 4203",
     "start:app4": "ng serve --project app4 --port 4204",
+    "start:app6": "ng serve --project app6 --port 4206",
     "build": "ng build",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
